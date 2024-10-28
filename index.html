@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMart - Магазин Книг</title>
+</head>
+<body>
+    <!-- Основний контент -->
+    <main>
+        <h2>Зображення</h2>
+        
+        <!-- Перша книга -->
+        <div>
+            <img src="Book1.jpg.jpg" alt="Назва книги 1" width="200">
+            <h3>Відьмак 4</h3>
+            <p><strong>Автор:</strong> Артем Мейсон</p>
+            <p><strong>Ціна:</strong> 450 грн</p>
+            
+            <!-- Маркірований список жанрів -->
+            <p><strong>Жанри:</strong></p>
+            <ul>
+                <li>Фентезі</li>
+                <li>Пригоди</li>
+                <li>Епопея</li>
+            </ul>
+
+            <!-- Нумерований список форматів -->
+            <p><strong>Формати:</strong></p>
+            <ol>
+                <li>Тверда обкладинка</li>
+                <li>М'яка обкладинка</li>
+                <li>Електронний формат</li>
+            </ol>
+        </div>
+
+        <hr> <!-- Розділювач між книгами -->
+        
+        <!-- Друга книга -->
+        <div>
+            <img src="Book2.jpg.jpg" alt="Назва книги 2" width="200">
+            <h3>Кунг-фу Панда 5</h3>
+            <p><strong>Автор:</strong> Євсєєв Денис</p>
+            <p><strong>Ціна:</strong> 600 грн</p>
+            
+            <!-- Маркірований список жанрів -->
+            <p><strong>Жанри:</strong></p>
+            <ul>
+                <li>Бойові мистецтва</li>
+                <li>Пригоди</li>
+                <li>Фентезі</li>
+            </ul>
+
+            <!-- Нумерований список форматів -->
+            <p><strong>Формати:</strong></p>
+            <ol>
+                <li>Тверда обкладинка</li>
+                <li>М'яка обкладинка</li>
+                <li>Аудіокнига</li>
+            </ol>
+        </div>
+        
+        <hr> <!-- Розділювач між книгами -->
+        
+        <!-- Додаткова таблиця з можливими книгами -->
+        <h2>Таблиця</h2>
+        
+        <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Назва книги</th>
+                    <th>Автор</th>
+                    <th>Жанр</th>
+                    <th>Ціна</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Хроніки Нарнії</td>
+                    <td>Клайв Льюїс</td>
+                    <td>Фентезі</td>
+                    <td>500 грн</td>
+                </tr>
+                <tr>
+                    <td>Гаррі Поттер і філософський камінь</td>
+                    <td>Джоан Роулінг</td>
+                    <td>Фентезі, Пригоди</td>
+                    <td>400 грн</td>
+                </tr>
+                <tr>
+                    <td>Мистецтво війни</td>
+                    <td>Сунь-цзи</td>
+                    <td>Саморозвиток, Історія</td>
+                    <td>300 грн</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Форма  -->
+        <h2>Форма</h2>
+        <form action="feedback.php" method="post">
+            <label for="name">Ім'я:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Повідомлення:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <button type="submit">Надіслати</button>
+        </form>
+
+        <!-- Посилання на сторінку з описом предметної галузі та бізнес-логіки -->
+        <h2>Інформація про бізнес-логіку</h2>
+        <p>Для детальної інформації перейдіть на сторінку <a href="Link.html">Опис предметної галузі та бізнес-логіки</a>.</p>
+        
+    </main>
+
+    <!-- Нижній колонтитул -->
+    <footer>
+        <p>&copy; 2023 BookMart. Всі права захищені.</p>
+    </footer>
+</body>
+</html>
