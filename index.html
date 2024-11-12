@@ -4,122 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookMart - Магазин Книг</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Основний контент -->
-    <main>
-        <h2>Зображення</h2>
-        
-        <!-- Перша книга -->
-        <div>
-            <img src="Book1.jpg.jpg" alt="Назва книги 1" width="200">
-            <h3>Відьмак 4</h3>
-            <p><strong>Автор:</strong> Артем Мейсон</p>
-            <p><strong>Ціна:</strong> 450 грн</p>
-            
-            <!-- Маркірований список жанрів -->
-            <p><strong>Жанри:</strong></p>
-            <ul>
-                <li>Фентезі</li>
-                <li>Пригоди</li>
-                <li>Епопея</li>
-            </ul>
 
-            <!-- Нумерований список форматів -->
-            <p><strong>Формати:</strong></p>
-            <ol>
-                <li>Тверда обкладинка</li>
-                <li>М'яка обкладинка</li>
-                <li>Електронний формат</li>
-            </ol>
+    <!-- Заголовок з логотипом -->
+    <header>
+        <div class="logo">
+            <a href="#" onclick="showHomePage()">
+                <h1>BookMart</h1>
+            </a>
         </div>
-
-        <hr> <!-- Розділювач між книгами -->
-        
-        <!-- Друга книга -->
-        <div>
-            <img src="Book2.jpg.jpg" alt="Назва книги 2" width="200">
-            <h3>Кунг-фу Панда 5</h3>
-            <p><strong>Автор:</strong> Євсєєв Денис</p>
-            <p><strong>Ціна:</strong> 600 грн</p>
-            
-            <!-- Маркірований список жанрів -->
-            <p><strong>Жанри:</strong></p>
-            <ul>
-                <li>Бойові мистецтва</li>
-                <li>Пригоди</li>
-                <li>Фентезі</li>
+        <nav>
+            <ul class="menu">
+                <li><a href="#" onclick="showCatalog()">Наші книги</a></li>
+                <li><a href="description.html">Опис бізнес-логіки</a></li>
+                <li><a href="#contact">Контакти</a></li>
             </ul>
-
-            <!-- Нумерований список форматів -->
-            <p><strong>Формати:</strong></p>
-            <ol>
-                <li>Тверда обкладинка</li>
-                <li>М'яка обкладинка</li>
-                <li>Аудіокнига</li>
-            </ol>
+        </nav>
+        <!-- Кнопка "Увійти" -->
+        <div class="login-button">
+            <button onclick="showLoginForm()">Увійти</button>
         </div>
-        
-        <hr> <!-- Розділювач між книгами -->
-        
-        <!-- Додаткова таблиця з можливими книгами -->
-        <h2>Таблиця</h2>
-        
-        <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-                <tr>
-                    <th>Назва книги</th>
-                    <th>Автор</th>
-                    <th>Жанр</th>
-                    <th>Ціна</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Хроніки Нарнії</td>
-                    <td>Клайв Льюїс</td>
-                    <td>Фентезі</td>
-                    <td>500 грн</td>
-                </tr>
-                <tr>
-                    <td>Гаррі Поттер і філософський камінь</td>
-                    <td>Джоан Роулінг</td>
-                    <td>Фентезі, Пригоди</td>
-                    <td>400 грн</td>
-                </tr>
-                <tr>
-                    <td>Мистецтво війни</td>
-                    <td>Сунь-цзи</td>
-                    <td>Саморозвиток, Історія</td>
-                    <td>300 грн</td>
-                </tr>
-            </tbody>
-        </table>
+    </header>
 
-        <!-- Форма  -->
-        <h2>Форма</h2>
-        <form action="feedback.php" method="post">
-            <label for="name">Ім'я:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+    <!-- Форма для входу (спочатку прихована) -->
+    <section id="login-form" style="display: none;">
+        <h2>Увійти до акаунту</h2>
+        <form>
+            <label for="username">Логін:</label>
+            <input type="text" id="username" name="username" required>
 
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
 
-            <label for="message">Повідомлення:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-
-            <button type="submit">Надіслати</button>
+            <button type="submit" class="green-button">Увійти</button>
         </form>
+        <button onclick="hideLoginForm()" class="back-button">Назад</button>
+    </section>
 
-        <!-- Посилання на сторінку з описом предметної галузі та бізнес-логіки -->
-        <h2>Інформація про бізнес-логіку</h2>
-        <p>Для детальної інформації перейдіть на сторінку <a href="Link.html">Опис предметної галузі та бізнес-логіки</a>.</p>
-        
+    <!-- Основний контент -->
+    <main id="main-content">
+        <h2>Ласкаво просимо до BookMart</h2>
+        <p>BookMart — ваш надійний інтернет-магазин для покупок книг різних жанрів!</p>
+        <p>Обирайте з широкого асортименту літератури та насолоджуйтесь читанням!</p>
     </main>
 
+    <!-- Каталог книг -->
+    <section id="catalog" style="display: none;">
+        <h2>Каталог книг</h2>
+        
+        <!-- Перша книга -->
+        <div class="book-card">
+            <img src="Book1.jpg" alt="Назва книги 1" width="100">
+            <div class="book-info">
+                <h3><a href="Book1.jpg">Відьмак 4</a></h3>
+                <p><strong>Автор:</strong> Артем Мейсон</p>
+                <ul class="genres">
+                    <li>Фентезі</li>
+                    <li>Пригоди</li>
+                    <li>Епопея</li>
+                </ul>
+            </div>
+            <div class="book-buy">
+                <p><strong>Ціна:</strong> 450 грн</p>
+                <button>Купити</button>
+            </div>
+        </div>
+
+        <hr>
+        
+        <!-- Друга книга -->
+        <div class="book-card">
+            <img src="Book2.jpg" alt="Назва книги 2" width="100">
+            <div class="book-info">
+                <h3><a href="Book2.jpg">Кунг-фу Панда 5</a></h3>
+                <p><strong>Автор:</strong> Євсєєв Денис</p>
+                <ul class="genres">
+                    <li>Бойові мистецтва</li>
+                    <li>Пригоди</li>
+                    <li>Фентезі</li>
+                </ul>
+            </div>
+            <div class="book-buy">
+                <p><strong>Ціна:</strong> 600 грн</p>
+                <button>Купити</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Нижній колонтитул -->
-    <footer>
+    <footer id="contact">
         <p>&copy; 2023 BookMart. Всі права захищені.</p>
     </footer>
+
+    <script>
+        // Функція для показу форми входу
+        function showLoginForm() {
+            document.getElementById("main-content").style.display = "none";
+            document.getElementById("catalog").style.display = "none";
+            document.getElementById("login-form").style.display = "block";
+        }
+
+        // Функція для приховування форми входу
+        function hideLoginForm() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
+        }
+
+        // Функція для показу каталогу книг
+        function showCatalog() {
+            document.getElementById("main-content").style.display = "none";
+            document.getElementById("catalog").style.display = "block";
+        }
+
+        // Функція для показу головної сторінки
+        function showHomePage() {
+            document.getElementById("main-content").style.display = "block";
+            document.getElementById("catalog").style.display = "none";
+        }
+    </script>
 </body>
 </html>

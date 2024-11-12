@@ -1,0 +1,242 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Заголовок і логотип */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgba(51, 51, 51, 0.7);
+    color: #fff;
+}
+
+header .logo h1 {
+    font-size: 1.8em;
+    font-family: 'Georgia', serif;
+    color: #ff6347;
+    margin: 0;
+}
+
+header .logo a {
+    text-decoration: none;
+}
+
+header nav .menu {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav .menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em 1em;
+}
+
+header nav .menu a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Кнопка "Увійти" */
+header .login-button {
+    margin-left: auto;
+}
+
+header .login-button button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header .login-button button:hover {
+    background-color: #0056b3;
+}
+
+/* Форма для входу */
+#login-form {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login-form form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login-form label {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#login-form input:focus {
+    outline: none;
+    border-color: #ff6347;
+}
+
+/* Кнопка входу */
+.green-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.green-button:hover {
+    background-color: #218838;
+}
+
+/* Кнопка назад */
+.back-button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #e55347;
+}
+
+/* Основний контент */
+main, section {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+/* Стиль карток книг */
+.book-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 25px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-card img {
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.book-info {
+    flex: 2;
+    text-align: left;
+}
+
+.book-info h3 a {
+    color: #34495e;
+    font-size: 1.3em;
+    text-decoration: none;
+}
+
+.book-info h3 a:hover {
+    color: #ff6347;
+}
+
+.genres {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.book-buy {
+    text-align: right;
+    flex: 1;
+}
+
+.book-buy p {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 15px;
+    color: #2c3e50;
+}
+
+.book-buy button {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.book-buy button:hover {
+    background-color: #e55347;
+    transform: scale(1.05);
+}
+
+/* Нижній колонтитул */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
