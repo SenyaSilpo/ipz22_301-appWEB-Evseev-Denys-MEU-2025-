@@ -43,6 +43,24 @@
         <button onclick="hideLoginForm()" class="back-button">Назад</button>
     </section>
 
+    <!-- Форма для замовлення (спочатку прихована) -->
+    <section id="order-form" style="display: none;">
+        <h2>Оформлення замовлення</h2>
+        <form>
+            <label for="customer-name">Ім'я:</label>
+            <input type="text" id="customer-name" name="customer-name" required>
+
+            <label for="phone-number">Номер телефону:</label>
+            <input type="tel" id="phone-number" name="phone-number" required>
+
+            <label for="delivery-address">Адреса доставки:</label>
+            <input type="text" id="delivery-address" name="delivery-address" required>
+
+            <button type="submit" class="green-button">Замовити</button>
+        </form>
+        <button onclick="hideOrderForm()" class="back-button">Назад</button>
+    </section>
+
     <!-- Основний контент -->
     <main id="main-content">
         <h2>Ласкаво просимо до BookMart</h2>
@@ -68,7 +86,7 @@
             </div>
             <div class="book-buy">
                 <p><strong>Ціна:</strong> 450 грн</p>
-                <button>Купити</button>
+                <button onclick="showOrderForm()">Купити</button>
             </div>
         </div>
 
@@ -88,7 +106,7 @@
             </div>
             <div class="book-buy">
                 <p><strong>Ціна:</strong> 600 грн</p>
-                <button>Купити</button>
+                <button onclick="showOrderForm()">Купити</button>
             </div>
         </div>
     </section>
@@ -120,8 +138,26 @@
 
         // Функція для показу головної сторінки
         function showHomePage() {
-            document.getElementById("main-content").style.display = "block";
+            // Приховуємо форми та каталог
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("order-form").style.display = "none";
             document.getElementById("catalog").style.display = "none";
+            
+            // Показуємо основний контент
+            document.getElementById("main-content").style.display = "block";
+        }
+
+        // Функція для показу форми замовлення
+        function showOrderForm() {
+            document.getElementById("main-content").style.display = "none";
+            document.getElementById("catalog").style.display = "none";
+            document.getElementById("order-form").style.display = "block";
+        }
+
+        // Функція для приховування форми замовлення
+        function hideOrderForm() {
+            document.getElementById("order-form").style.display = "none";
+            document.getElementById("catalog").style.display = "block";
         }
     </script>
 </body>

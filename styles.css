@@ -19,6 +19,26 @@ header {
     background-color: rgba(51, 51, 51, 0.7);
     color: #fff;
 }
+/* Каталог книг */
+#catalog {
+    background-color: transparent; /* Прибираємо білий прозорий фон */
+}
+
+.book-card {
+    background-color: transparent; /* Прибираємо білий прозорий фон карток */
+    border: none; /* Видаляємо рамку, якщо вона не потрібна */
+    box-shadow: none; /* Видаляємо тіні, якщо не потрібні */
+}
+#catalog h2 {
+    background-color: #ff6347; /* Помаранчевий фон */
+    color: #fff; /* Білий текст */
+    display: inline-block; /* Робимо фон тільки для тексту */
+    padding: 10px 20px; /* Відступи всередині */
+    border-radius: 5px; /* Злегка округляємо краї */
+    text-transform: uppercase; /* Всі літери великі */
+    font-size: 1.5em; /* Збільшуємо текст */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Легка тінь */
+}
 
 header .logo h1 {
     font-size: 1.8em;
@@ -69,16 +89,29 @@ header .login-button button:hover {
     background-color: #0056b3;
 }
 
+#login-form h2 {
+    background-color: #ff6347; /* Оранжевий фон */
+    color: #fff; /* Білий текст */
+    padding: 10px 20px; /* Відступи навколо тексту */
+    border-radius: 8px; /* Округлені кути */
+    font-size: 1.5em; /* Розмір шрифта */
+    text-align: center; /* Центрування тексту */
+    display: inline-block; /* Фон займає тільки місце, необхідне для тексту */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
+
 /* Форма для входу */
 #login-form {
     width: 80%;
     margin: auto;
     padding: 20px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: transparent; /* Прозорий фон */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 #login-form form {
     max-width: 500px;
@@ -127,22 +160,34 @@ header .login-button button:hover {
     background-color: #218838;
 }
 
+#order-form h2 {
+    background-color: #ff6347; /* Оранжевий фон */
+    color: #fff; /* Білий текст */
+    padding: 10px 20px; /* Відступи навколо тексту */
+    border-radius: 8px; /* Округлені кути */
+    font-size: 1.5em; /* Розмір шрифта */
+    text-align: center; /* Центрування тексту */
+    display: inline-block; /* Фон займає тільки місце, необхідне для тексту */
+    margin-bottom: 20px; /* Відступ знизу */
+}
+
 /* Кнопка назад */
 .back-button {
     background-color: #ff6347;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 20px; /* Збільшуємо відступи для додаткового простору */
     border: none;
     border-radius: 8px;
-    font-size: 1em;
+    font-size: 1.1em; /* Збільшуємо розмір шрифту */
     cursor: pointer;
     margin-top: 15px;
-    width: 100%;
+    width: auto; /* Залишаємо автоматичну ширину для збереження пропорцій */
+    max-width: 100%; /* Задаємо максимальну ширину кнопки */
+    display: block; /* Робимо кнопку блоковою */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* Центруємо текст всередині кнопки */
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.back-button:hover {
-    background-color: #e55347;
 }
 
 /* Основний контент */
@@ -239,4 +284,46 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* Стиль форми замовлення */
+#order-form {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: transparent; /* Прозорий фон */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#order-form form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#order-form label {
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+#order-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#order-form input:focus {
+    outline: none;
+    border-color: #ff6347;
 }
