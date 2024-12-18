@@ -19,26 +19,6 @@ header {
     background-color: rgba(51, 51, 51, 0.7);
     color: #fff;
 }
-/* Каталог книг */
-#catalog {
-    background-color: transparent; /* Прибираємо білий прозорий фон */
-}
-
-.book-card {
-    background-color: transparent; /* Прибираємо білий прозорий фон карток */
-    border: none; /* Видаляємо рамку, якщо вона не потрібна */
-    box-shadow: none; /* Видаляємо тіні, якщо не потрібні */
-}
-#catalog h2 {
-    background-color: #ff6347; /* Помаранчевий фон */
-    color: #fff; /* Білий текст */
-    display: inline-block; /* Робимо фон тільки для тексту */
-    padding: 10px 20px; /* Відступи всередині */
-    border-radius: 5px; /* Злегка округляємо краї */
-    text-transform: uppercase; /* Всі літери великі */
-    font-size: 1.5em; /* Збільшуємо текст */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Легка тінь */
-}
 
 header .logo h1 {
     font-size: 1.8em;
@@ -89,228 +69,28 @@ header .login-button button:hover {
     background-color: #0056b3;
 }
 
-#login-form h2 {
-    background-color: #ff6347; /* Оранжевий фон */
-    color: #fff; /* Білий текст */
-    padding: 10px 20px; /* Відступи навколо тексту */
-    border-radius: 8px; /* Округлені кути */
-    font-size: 1.5em; /* Розмір шрифта */
-    text-align: center; /* Центрування тексту */
-    display: inline-block; /* Фон займає тільки місце, необхідне для тексту */
-    margin-bottom: 20px; /* Відступ знизу */
-}
-
-
-/* Форма для входу */
-#login-form {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: transparent; /* Прозорий фон */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-#login-form form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#login-form label {
-    font-size: 1.1em;
-    display: block;
-    margin-bottom: 5px;
-}
-
-#login-form input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-#login-form input:focus {
-    outline: none;
-    border-color: #ff6347;
-}
-
-/* Кнопка входу */
-.green-button {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.green-button:hover {
-    background-color: #218838;
-}
-
-#order-form h2 {
-    background-color: #ff6347; /* Оранжевий фон */
-    color: #fff; /* Білий текст */
-    padding: 10px 20px; /* Відступи навколо тексту */
-    border-radius: 8px; /* Округлені кути */
-    font-size: 1.5em; /* Розмір шрифта */
-    text-align: center; /* Центрування тексту */
-    display: inline-block; /* Фон займає тільки місце, необхідне для тексту */
-    margin-bottom: 20px; /* Відступ знизу */
-}
-
-/* Кнопка назад */
+/* Кнопка "Назад" */
 .back-button {
     background-color: #ff6347;
-    color: #fff;
-    padding: 12px 20px; /* Збільшуємо відступи для додаткового простору */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
     border: none;
-    border-radius: 8px;
-    font-size: 1.1em; /* Збільшуємо розмір шрифту */
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
-    width: auto; /* Залишаємо автоматичну ширину для збереження пропорцій */
-    max-width: 100%; /* Задаємо максимальну ширину кнопки */
-    display: block; /* Робимо кнопку блоковою */
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center; /* Центруємо текст всередині кнопки */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Основний контент */
-main, section {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-}
-
-/* Стиль карток книг */
-.book-card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 25px 0;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.book-card img {
-    border-radius: 8px;
-    margin-right: 20px;
-}
-
-.book-info {
-    flex: 2;
-    text-align: left;
-}
-
-.book-info h3 a {
-    color: #34495e;
-    font-size: 1.3em;
-    text-decoration: none;
-}
-
-.book-info h3 a:hover {
-    color: #ff6347;
-}
-
-.genres {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: #555;
-    font-size: 0.9em;
     margin-top: 10px;
 }
 
-.book-buy {
-    text-align: right;
-    flex: 1;
-}
-
-.book-buy p {
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 0 0 15px;
-    color: #2c3e50;
-}
-
-.book-buy button {
-    background-color: #ff6347;
-    color: #fff;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-}
-
-.book-buy button:hover {
+.back-button:hover {
     background-color: #e55347;
-    transform: scale(1.05);
-}
-
-/* Нижній колонтитул */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Стиль форми замовлення */
 #order-form {
-    width: 80%;
-    margin: auto;
     padding: 20px;
-    text-align: center;
-    background-color: transparent; /* Прозорий фон */
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-
-#order-form form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#order-form label {
-    font-size: 1.1em;
-    display: block;
-    margin-bottom: 5px;
 }
 
 #order-form input {
@@ -326,4 +106,227 @@ footer p {
 #order-form input:focus {
     outline: none;
     border-color: #ff6347;
+}
+
+#order-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#order-form button:hover {
+    background-color: #218838;
+}
+
+/* Стилі для вкладок */
+.tabs {
+    display: flex;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+    background-color: #e6e6e6;
+}
+
+.tab.active {
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    margin-top: -1px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Стиль для книг у каталозі */
+.book-item {
+    background-color: rgba(245, 245, 245, 0.9);
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-item h3 {
+    margin: 0;
+    color: #ff6347;
+}
+
+.book-item p {
+    margin: 5px 0;
+}
+
+.book-item button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-item button:hover {
+    background-color: #0056b3;
+}
+/* Головна сторінка */
+#main-content {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 800px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#main-content h2 {
+    font-size: 2.5em;
+    font-family: 'Georgia', serif;
+    color: #0c0c0c;
+    margin-bottom: 20px;
+}
+
+#main-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+#main-content .highlight {
+    color: #007bff;
+    font-weight: bold;
+}
+
+#main-content button {
+    background-color: #0e0d0d;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#main-content button:hover {
+    background-color: #050505;
+    transform: scale(1.05);
+}
+
+/* Декоративні елементи */
+#main-content::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background-color: #0c0c0c;
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+#main-content .image-banner {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#main-content .image-banner img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#main-content .image-banner img:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    #main-content {
+        padding: 20px;
+    }
+
+    #main-content h2 {
+        font-size: 2em;
+    }
+
+    #main-content p {
+        font-size: 1em;
+    }
+
+    #main-content .image-banner img {
+        width: 150px;
+    }
+}
+/* Стиль для нижнього колонтитула */
+footer {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #ff6347;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Фіксація футера внизу, якщо контенту мало */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
 }

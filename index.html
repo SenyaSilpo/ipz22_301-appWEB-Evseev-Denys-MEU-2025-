@@ -5,6 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookMart - Магазин Книг</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Стилі для вкладок */
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            background-color: #f9f9f9;
+        }
+
+        .tab.active {
+            background-color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Стилі для форми замовлення */
+        #order-form {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        #order-form input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #order-form input:focus {
+            outline: none;
+            border-color: #ff6347;
+        }
+
+        #order-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #order-form button:hover {
+            background-color: #218838;
+        }
+
+        .back-button {
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .back-button:hover {
+            background-color: #e55347;
+        }
+
+        /* Стилі для форми входу */
+        #login-form {
+            display: none;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        #login-form input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #login-form input:focus {
+            outline: none;
+            border-color: #ff6347;
+        }
+
+        #login-form button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #login-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
@@ -17,101 +145,115 @@
         </div>
         <nav>
             <ul class="menu">
+                <li><a href="#" onclick="showHomePage()">Головна</a></li>
                 <li><a href="#" onclick="showCatalog()">Наші книги</a></li>
                 <li><a href="description.html">Опис бізнес-логіки</a></li>
                 <li><a href="#contact">Контакти</a></li>
             </ul>
         </nav>
-        <!-- Кнопка "Увійти" -->
         <div class="login-button">
             <button onclick="showLoginForm()">Увійти</button>
         </div>
     </header>
-<main>
-    <!-- Форма для входу (спочатку прихована) -->
-    <section id="login-form" style="display: none;">
-        <h2>Увійти до акаунту</h2>
-        <form>
-            <label for="username">Логін:</label>
-            <input type="text" id="username" name="username" required>
-
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit" class="green-button">Увійти</button>
-        </form>
-        <button onclick="hideLoginForm()" class="back-button">Назад</button>
-    </section>
-
-    <!-- Форма для замовлення (спочатку прихована) -->
-    <section id="order-form" style="display: none;">
-        <h2>Оформлення замовлення</h2>
-        <form>
-            <label for="customer-name">Ім'я:</label>
-            <input type="text" id="customer-name" name="customer-name" required>
-
-            <label for="phone-number">Номер телефону:</label>
-            <input type="tel" id="phone-number" name="phone-number" required>
-
-            <label for="delivery-address">Адреса доставки:</label>
-            <input type="text" id="delivery-address" name="delivery-address" required>
-
-            <button type="submit" class="green-button">Замовити</button>
-        </form>
-        <button onclick="hideOrderForm()" class="back-button">Назад</button>
-    </section>
-
-    <!-- Основний контент -->
+    
     <main id="main-content">
         <h2>Ласкаво просимо до BookMart</h2>
-        <p>BookMart — ваш надійний інтернет-магазин для покупок книг різних жанрів!</p>
-        <p>Обирайте з широкого асортименту літератури та насолоджуйтесь читанням!</p>
-
-
-    <!-- Каталог книг -->
-    <section id="catalog" style="display: none;">
-        <h2>Каталог книг</h2>
+        <p>BookMart — ваш <span class="highlight">надійний інтернет-магазин</span> для покупок книг різних жанрів! 
+           Від фантастики до наукових праць — у нас є все для вашого задоволення.</p>
+        <p>Приєднуйтесь до тисяч задоволених читачів і знаходьте свої улюблені книги легко та швидко.</p>
+        <button onclick="showCatalog()">Ознайомитись з асортиментом</button>
         
-        <!-- Перша книга -->
-        <div class="book-card">
-            <img src="Book1.jpg" alt="Назва книги 1" width="100">
-            <div class="book-info">
-                <h3><a href="Book1.jpg">Відьмак 4</a></h3>
-                <p><strong>Автор:</strong> Артем Мейсон</p>
-                <ul class="genres">
-                    <li>Фентезі</li>
-                    <li>Пригоди</li>
-                    <li>Епопея</li>
-                </ul>
+        <div class="image-banner">
+            <img src="4.jpg" alt="Книга 1">
+            <img src="2.jpg" alt="Книга 2">
+            <img src="3.jpg" alt="Книга 3">
+        </div>
+    </main>
+
+    <!-- Вкладки -->
+    <section id="catalog-section" style="display: none;">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('fiction')">Художня література</div>
+            <div class="tab" onclick="showTab('science')">Наукові книги</div>
+            <div class="tab" onclick="showTab('bestsellers')">Бестселери</div>
+        </div>
+
+        <!-- Контент вкладок -->
+        <div id="fiction" class="tab-content active">
+            <h2>Художня література</h2>
+            <div class="book-item">
+                <h3>Книга 1: Таємничий світ</h3>
+                <p>Автор: Іван Іваненко</p>
+                <p>Ціна: 200 грн</p>
+                <button onclick="showOrderForm()">Замовити</button>
             </div>
-            <div class="book-buy">
-                <p><strong>Ціна:</strong> 450 грн</p>
-                <button onclick="showOrderForm()">Купити</button>
+            <div class="book-item">
+                <h3>Книга 2: Подорож у майбутнє</h3>
+                <p>Автор: Оксана Петренко</p>
+                <p>Ціна: 250 грн</p>
+                <button onclick="showOrderForm()">Замовити</button>
             </div>
         </div>
 
-        <hr>
-        
-        <!-- Друга книга -->
-        <div class="book-card">
-            <img src="Book2.jpg" alt="Назва книги 2" width="100">
-            <div class="book-info">
-                <h3><a href="Book2.jpg">Кунг-фу Панда 5</a></h3>
-                <p><strong>Автор:</strong> Євсєєв Денис</p>
-                <ul class="genres">
-                    <li>Бойові мистецтва</li>
-                    <li>Пригоди</li>
-                    <li>Фентезі</li>
-                </ul>
-            </div>
-            <div class="book-buy">
-                <p><strong>Ціна:</strong> 600 грн</p>
-                <button onclick="showOrderForm()">Купити</button>
+        <div id="science" class="tab-content">
+            <h2>Наукові книги</h2>
+            <div class="book-item">
+                <h3>Книга 1: Основи програмування</h3>
+                <p>Автор: Олег Коваленко</p>
+                <p>Ціна: 300 грн</p>
+                <button onclick="showOrderForm()">Замовити</button>
             </div>
         </div>
+
+        <div id="bestsellers" class="tab-content">
+            <h2>Бестселери</h2>
+            <div class="book-item">
+                <h3>Книга 1: Секрети успіху</h3>
+                <p>Автор: Андрій Сидоренко</p>
+                <p>Ціна: 350 грн</p>
+                <button onclick="showOrderForm()">Замовити</button>
+            </div>
+        </div>
+
+        <button onclick="showHomePage()" class="back-button">Назад</button>
     </section>
-</main>
-    <!-- Нижній колонтитул -->
+
+    <!-- Форма замовлення -->
+    <section id="order-form">
+        <h2>Оформлення замовлення</h2>
+        <form>
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+
+            <label for="address">Адреса доставки:</label>
+            <input type="text" id="address" name="address" placeholder="Ваша адреса" required>
+
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефону" required>
+
+            <button type="submit" class="green-button">Оформити замовлення</button>
+            <button type="button" onclick="hideOrderForm()" class="back-button">Назад</button>
+        </form>
+    </section>
+
+    <!-- Форма входу -->
+    <section id="login-form">
+        <h2>Форма входу</h2>
+        <form>
+            <label for="login-email">Електронна пошта:</label>
+            <input type="email" id="login-email" name="login-email" placeholder="Ваш email" required>
+
+            <label for="login-password">Пароль:</label>
+            <input type="password" id="login-password" name="login-password" placeholder="Ваш пароль" required>
+
+            <button type="submit" class="blue-button">Увійти</button>
+            <button type="button" onclick="hideLoginForm()" class="back-button">Назад</button>
+        </form>
+    </section>
+
     <footer id="contact">
         <p>&copy; 2023 BookMart. Всі права захищені.</p>
     </footer>
@@ -120,44 +262,52 @@
         // Функція для показу форми входу
         function showLoginForm() {
             document.getElementById("main-content").style.display = "none";
-            document.getElementById("catalog").style.display = "none";
+            document.getElementById("catalog-section").style.display = "none";
             document.getElementById("login-form").style.display = "block";
-        }
-
-        // Функція для приховування форми входу
-        function hideLoginForm() {
-            document.getElementById("login-form").style.display = "none";
-            document.getElementById("main-content").style.display = "block";
         }
 
         // Функція для показу каталогу книг
         function showCatalog() {
             document.getElementById("main-content").style.display = "none";
-            document.getElementById("catalog").style.display = "block";
+            document.getElementById("catalog-section").style.display = "block";
         }
 
         // Функція для показу головної сторінки
         function showHomePage() {
-            // Приховуємо форми та каталог
-            document.getElementById("login-form").style.display = "none";
-            document.getElementById("order-form").style.display = "none";
-            document.getElementById("catalog").style.display = "none";
-            
-            // Показуємо основний контент
             document.getElementById("main-content").style.display = "block";
+            document.getElementById("catalog-section").style.display = "none";
+            document.getElementById("order-form").style.display = "none"; // приховати форму замовлення
+            document.getElementById("login-form").style.display = "none"; // приховати форму входу
+        }
+
+        // Функція для переключення вкладок
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
         }
 
         // Функція для показу форми замовлення
         function showOrderForm() {
-            document.getElementById("main-content").style.display = "none";
-            document.getElementById("catalog").style.display = "none";
+            document.getElementById("catalog-section").style.display = "none";
             document.getElementById("order-form").style.display = "block";
         }
 
         // Функція для приховування форми замовлення
         function hideOrderForm() {
             document.getElementById("order-form").style.display = "none";
-            document.getElementById("catalog").style.display = "block";
+            document.getElementById("catalog-section").style.display = "block";
+        }
+
+        // Функція для приховування форми входу
+        function hideLoginForm() {
+            document.getElementById("login-form").style.display = "none";
+            document.getElementById("main-content").style.display = "block";
         }
     </script>
 </body>
